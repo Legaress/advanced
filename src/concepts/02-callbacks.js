@@ -8,11 +8,11 @@ export const callbacksComponent = (element) => {
 	console.log('callbacks');
 	const id = "5d86371f25a058e5b1c8a65e";
 	findHero( id, (error, hero) => {
-
+		//element.innerHTML = hero?.name || 'No hay heroe'
 		element.innerHTML = error ? error : hero.name;
 	})
 
-};
+}
 
 /**
  * 
@@ -29,4 +29,4 @@ const findHero = (id, callback) => {
 		callback(null, hero);
 	}
 
-} 
+}
