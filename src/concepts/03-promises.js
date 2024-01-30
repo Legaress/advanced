@@ -16,8 +16,22 @@ export const promisesComponent = (element) => {
 		element.innerHTML = error;
 	}
 
-	const id1 = "5d86371f9f80b591f499df32";
-	findHero(id1).then(renderHero).catch(renderError);
+	const renderTwoHeroes = ([hero1,hero2]) => {
+		element.innerHTML = `${hero1.name}<br>
+							 ${hero2.name}`
+	}
+
+	const id1 = '5d86371f9f80b591f499df32';
+	const id2 = '5d86371fd55e2e2a30fe1ccb2';
+    
+	//findHero(id1).then(renderHero).catch(renderError);
+
+	Promise.all([
+		findHero(id1),
+		findHero(id2)
+	])
+	.then(renderTwoHeroes)
+	.catch(renderError);
 }
 
 /**
