@@ -1,5 +1,5 @@
 import javascriptLogo from './javascript.svg';
-import { asyncComponent } from './src/concepts/05-async';
+import { asyncAwaitComponent } from './src/concepts/06-async-await';
 import './style.css';
 import viteLogo from '/vite.svg';
 document.querySelector('#app').innerHTML = `
@@ -22,4 +22,5 @@ const divCard = document.querySelector('.card');
 //callbacksComponent(divCard);
 //promisesComponent(divCard);
 //promiseRaceComponent(divCard);
-asyncComponent(divCard);
+// asyncComponent(divCard);
+asyncAwaitComponent(divCard);
