@@ -7,7 +7,7 @@ export const callbacksComponent = (element) => {
 
 	console.log('callbacks');
 	const id = "5d86371f25a058e5b1c8a65e";
-	findHero( id, (error, hero) => {
+	findHero(id, (error, hero) => {
 		//element.innerHTML = hero?.name || 'No hay heroe'
 		element.innerHTML = error ? error : hero.name;
 	})
@@ -21,11 +21,11 @@ export const callbacksComponent = (element) => {
  */
 const findHero = (id, callback) => {
 
-	const hero = heroes.find( hero => hero.id === id);
-	if(!hero){
+	const hero = heroes.find(hero => hero.id === id);
+	if (!hero) {
 		callback(`Hero with id ${id} not found.`);
 	}
-	else{
+	else {
 		callback(null, hero);
 	}
 
