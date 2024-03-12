@@ -5,7 +5,13 @@ import { heroes } from '../data/heroes';
  */
 export const forAwaitComponent = async( element ) => {
 
+    const heroIds =  heroes.map( hero => hero.id);
 
+    const heroPromises = getHeroesAsync(heroIds);
+
+    for await (const hero of heroPromises){
+        element.innerHTML += `${hero.name} <br>`;
+    }
 
 }
 
