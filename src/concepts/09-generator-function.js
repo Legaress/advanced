@@ -18,6 +18,21 @@ export const generatorFunctionComponent = (element) => {
 
 };
 
+export const generatorFunction2Component = (element) => {
+
+	const counter = myCounter();
+	const counterButton = document.createElement('button');
+	counterButton.innerText = 'Click me';
+	element.append(counterButton);
+
+	const renderButton = () => {
+		counterButton.innerText = `Click ${counter.next().value}`;
+	}
+
+	counterButton.addEventListener('click', renderButton);
+
+};
+
 function* myGeneratorFunction() {
 
 	yield 'Primer Elemento';
@@ -27,4 +42,11 @@ function* myGeneratorFunction() {
 	yield 'Quinto Elemento';
 
 	return 'Ultimo elemento';
+}
+
+function* myCounter() {
+	let counter = 0;
+	while (true) {
+		yield ++counter;
+	}
 }
