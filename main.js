@@ -1,5 +1,5 @@
 import javascriptLogo from './javascript.svg';
-import { asyncAwait2Component } from './src/concepts/07-async-await';
+import { generatorFunctionComponent } from './src/concepts/09-generator-function';
 import './style.css';
 import viteLogo from '/vite.svg';
 document.querySelector('#app').innerHTML = `
@@ -12,7 +12,6 @@ document.querySelector('#app').innerHTML = `
     </a>
     <h1>Hello Vite!</h1>
     <div class="card">
-      
     </div>
   </div>
 `;
@@ -24,5 +23,7 @@ const divCard = document.querySelector('.card');
 //promiseRaceComponent(divCard);
 // asyncComponent(divCard);
 // asyncAwaitComponent(divCard);
-asyncAwait2Component(divCard);
+// asyncAwait2Component(divCard);
+generatorFunctionComponent(divCard);
+
 

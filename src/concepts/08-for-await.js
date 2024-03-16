@@ -3,13 +3,13 @@ import { heroes } from '../data/heroes';
  * 
  * @param {HTMLDivElement} element 
  */
-export const forAwaitComponent = async( element ) => {
+export const forAwaitComponent = async (element) => {
 
-    const heroIds =  heroes.map( hero => hero.id);
+    const heroIds = heroes.map(hero => hero.id);
 
     const heroPromises = getHeroesAsync(heroIds);
 
-    for await (const hero of heroPromises){
+    for await (const hero of heroPromises) {
         element.innerHTML += `${hero.name} <br>`;
     }
 
@@ -20,22 +20,22 @@ export const forAwaitComponent = async( element ) => {
  * @param {Array<String>} heroIds 
  * @returns {Array<Promise>}
  */
-const getHeroesAsync = ( heroIds ) => {
-    
+const getHeroesAsync = (heroIds) => {
+
     const heroPromises = [];
 
-    heroIds.forEach( id => {
-        heroPromises.push( getHeroAsync(id)  );
+    heroIds.forEach(id => {
+        heroPromises.push(getHeroAsync(id));
     });
 
     return heroPromises;
 }
 
-const getHeroAsync = async(id) => {
+const getHeroAsync = async (id) => {
 
-    await new Promise(( resolve ) => {
+    await new Promise((resolve) => {
         setTimeout(() => resolve(), 1000)
     });
 
-    return heroes.find( hero => hero.id === id );
+    return heroes.find(hero => hero.id === id);
 }
