@@ -1,5 +1,5 @@
 import javascriptLogo from './javascript.svg';
-import { generatorFunction2Component } from './src/concepts/09-generator-function';
+import { generatorAsyncComponent } from './src/concepts/10-generator-async';
 import './style.css';
 import viteLogo from '/vite.svg';
 document.querySelector('#app').innerHTML = `
@@ -25,6 +25,7 @@ const divCard = document.querySelector('.card');
 // asyncAwaitComponent(divCard);
 // asyncAwait2Component(divCard);
 // generatorFunctionComponent(divCard);
-generatorFunction2Component(divCard);
+// generatorFunction2Component(divCard);
+generatorAsyncComponent(divCard);
 
 
